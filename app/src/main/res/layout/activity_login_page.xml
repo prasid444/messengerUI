@@ -48,7 +48,6 @@
                 android:id="@+id/input_passphrase_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
                 android:hint="@string/hint_confirm_passphrase" />
         </android.support.design.widget.TextInputLayout>
 

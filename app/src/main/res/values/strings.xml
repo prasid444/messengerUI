@@ -12,7 +12,7 @@
 
     <string name="name"></string>
     <string name="hint_passphrase">Passphrase</string>
-    <string name="hint_confirm_passphrase">Passphrase</string>
+    <string name="hint_confirm_passphrase">Confirm Passphrase</string>
     <string name="btn_create_account">CREATE ACCOUNT</string>
     <string name="err_msg_name">Passphrase not in database</string>
 </resources>
