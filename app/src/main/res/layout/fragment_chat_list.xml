@@ -50,7 +50,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/is_user_shortmessage"
+                android:id="@+id/id_user_shortmessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
