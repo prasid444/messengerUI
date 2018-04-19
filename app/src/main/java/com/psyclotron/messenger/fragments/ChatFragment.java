@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -56,16 +58,26 @@ public class ChatFragment extends Fragment {
         //find view by id and attaching adapter for the RecyclerView
         RecyclerView recyclerView = chatview.findViewById(R.id.recycler_view);
 
+        //for dividing each items
+        DividerItemDecoration itemDecorator = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+        itemDecorator.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.itemdivider));
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext())); //this was used
         chatAdapter = new ChatAdapter(recyclerView, chats, (Activity) getContext());
+
+        //set divider in recycle view
+        recyclerView.addItemDecoration(itemDecorator);
+
         recyclerView.setAdapter(chatAdapter);
+
+
 
         //set load more listener for the RecyclerView adapter
         chatAdapter.setLoadMoreListener(new LoadMoreListner() {
 
             @Override
             public void LoadMore() {
-                if (chats.size() <= 20) {
+                if (chats.size() <= 90) {
                     chats.add(null);
                     chatAdapter.notifyItemInserted(chats.size() - 1);
                     new Handler().postDelayed(new Runnable() {
